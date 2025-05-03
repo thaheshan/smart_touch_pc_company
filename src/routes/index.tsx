@@ -8,15 +8,27 @@ import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
 import AccountPage from '../pages/AccountPage';
 import WishlistPage from '../pages/WishlistPage';
+import AboutPage from '../pages/AboutPage';
+import ContactPage from '../pages/ContactPage';
+import FaqPage from '../pages/FaqPage';
+import PrivacyPolicyPage from '../pages/PrivacyPolicyPage';
+import TermsPage from '../pages/TermsPage';
+import ErrorPage from '../pages/ErrorPage';
+import ProductsPage from '../pages/ProductsPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: 'products',
+        element: <ProductsPage />,
       },
       {
         path: 'product/:id',
@@ -41,6 +53,26 @@ const router = createBrowserRouter([
       {
         path: 'wishlist',
         element: <WishlistPage />,
+      },
+      {
+        path: 'about',
+        element: <AboutPage />,
+      },
+      {
+        path: 'contact',
+        element: <ContactPage />,
+      },
+      {
+        path: 'faq',
+        element: <FaqPage />,
+      },
+      {
+        path: 'privacy-policy',
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: 'terms',
+        element: <TermsPage />,
       },
     ],
   },
