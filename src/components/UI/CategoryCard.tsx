@@ -6,16 +6,20 @@ interface CategoryCardProps {
   name: string;
   icon: React.ReactNode;
   url: string;
+  description?: string;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ id, name, icon, url }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({  name, icon, url, description }) => {
   return (
     <Link to={url} className="block">
-      <div className="flex flex-col items-center justify-center p-4 bg-white rounded-lg border border-gray-200 hover:border-red-500 transition-all duration-300 h-[140px]">
-        <div className="mb-3 text-gray-600">
+      <div className="flex flex-col items-center justify-center p-6 bg-white rounded-lg border border-gray-200 hover:border-red-500 transition-all duration-300 h-[180px] group">
+        <div className="mb-4 text-gray-600 group-hover:text-red-500 transition-colors">
           {icon}
         </div>
-        <h3 className="text-sm font-medium text-center">{name}</h3>
+        <h3 className="text-lg font-medium text-center mb-2">{name}</h3>
+        {description && (
+          <p className="text-sm text-gray-500 text-center line-clamp-2">{description}</p>
+        )}
       </div>
     </Link>
   );
