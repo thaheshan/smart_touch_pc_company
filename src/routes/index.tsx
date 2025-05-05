@@ -15,6 +15,7 @@ import PrivacyPolicyPage from '../pages/PrivacyPolicyPage';
 import TermsPage from '../pages/TermsPage';
 import ErrorPage from '../pages/ErrorPage';
 import ProductsPage from '../pages/ProductsPage';
+import CategoryPage from '../pages/CategoryPage';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: 'products',
         element: <ProductsPage />,
+      },
+      {
+        path: 'category/:categoryId',
+        element: <CategoryPage />,
       },
       {
         path: 'product/:id',
