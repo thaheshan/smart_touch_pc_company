@@ -20,13 +20,13 @@ const Navbar: React.FC = () => {
       <nav className="border-b border-gray-200 py-4 bg-white">
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold">
-            Exclusive
+          <Link to="/" className="text-S font-bold text-black-800 hover:text-red-500">
+            SMART TOUCH PC
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-800 hover:text-red-500 transition-colors">
+            <Link to="/home" className="text-gray-800 hover:text-red-500 transition-colors">
               Home
             </Link>
             <Link to="/contact" className="text-gray-800 hover:text-red-500 transition-colors">
