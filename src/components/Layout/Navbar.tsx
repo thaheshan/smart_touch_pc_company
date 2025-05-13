@@ -6,27 +6,50 @@ import logo from '../../Images/smart touch pc logo.png';
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isEnglish, setIsEnglish] = useState(true);
 
   return (
     <>
       {/* Announcement Bar */}
-      <div className="bg-black text-white text-center py-2 px-2 ">
-        <p className="text-sm ">
+      <div className="bg-white text-black text-center py-2 px-2">
+        <p className="text-sm">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{' '}
-          <span className="font-bold cursor-pointer   px-2">ShopNow</span>
-          <Link  className=' cursor-pointer text-S  absolute -right-0 px-3 hover:text-red-500 transition-colors' to={''}
-           onClick={() => setIsEnglish(!isEnglish)}>ENGLISH</Link>
+          <span className="font-bold cursor-pointer px-2">ShopNow</span>
 
+          {/* Hoverable Language Dropdown */}
+          <div className="relative  group ml-4">
+            <span className="cursor-pointer text-sm hover:text-red-500 transition-colors  absolute -right-0 -bottom-0  px-3 py-0">
+              ENGLISH
+            </span>
+            <div className="absolute right-0 mt-2 bg-white border border-gray-200 shadow-md rounded-md hidden group-hover:block z-50">
+              <Link
+                to="/english"
+                className="block px-4 py-2 text-gray-800 hover:text-red-500 transition-colors"
+              >
+                English
+              </Link>
+              <Link
+                to="/tamil"
+                className="block px-4 py-2 text-gray-800 hover:text-red-500 transition-colors"
+              >
+                Tamil
+              </Link>
+              <Link
+                to="/sinhala"
+                className="block px-4 py-2 text-gray-800 hover:text-red-500 transition-colors"
+              >
+                Sinhala
+              </Link>
+            </div>
+          </div>
         </p>
       </div>
 
       {/* Main Navbar */}
-      <nav className="border-b border-gray-200 py-4 bg-white">
+      <nav className="border-b border-gray-200 py-4 bg-black">
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-S font-bold text-black-800 hover:text-red-500">
-             <img
+            <img
               src={logo}
               alt="SMART TOUCH PC LOGO"
               className="rounded-lg object-cover w-full h-[60px] md:h-[70px]"
@@ -35,16 +58,16 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/home" className="text-gray-800 hover:text-red-500 transition-colors">
+            <Link to="/home" className="text-white hover:text-red-500 transition-colors">
               Home
             </Link>
-            <Link to="/contact" className="text-gray-800 hover:text-red-500 transition-colors">
+            <Link to="/contact" className="text-white hover:text-red-500 transition-colors">
               Contact
             </Link>
-            <Link to="/about" className="text-gray-800 hover:text-red-500 transition-colors">
+            <Link to="/about" className="text-white hover:text-red-500 transition-colors">
               About
             </Link>
-            <Link to="/signup" className="text-gray-800 hover:text-red-500 transition-colors">
+            <Link to="/signup" className="text-white hover:text-red-500 transition-colors">
               Sign Up
             </Link>
           </div>
@@ -63,16 +86,16 @@ const Navbar: React.FC = () => {
 
           {/* Action icons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/wishlist" className="text-gray-800 hover:text-red-500 transition-colors">
+            <Link to="/wishlist" className="text-white hover:text-red-500 transition-colors">
               <Heart size={24} />
             </Link>
-            <Link to="/cart" className="text-gray-800 hover:text-red-500 transition-colors relative">
+            <Link to="/cart" className="text-white hover:text-red-500 transition-colors relative">
               <ShoppingCart size={24} />
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 3
               </span>
             </Link>
-            <Link to="/account" className="text-gray-800 hover:text-red-500 transition-colors">
+            <Link to="/account" className="text-white hover:text-red-500 transition-colors">
               <User size={24} />
             </Link>
           </div>
@@ -86,27 +109,6 @@ const Navbar: React.FC = () => {
           </button>
         </div>
       </nav>
-      
-      {/* Language Selection menu */}
-      {isEnglish &&(
-        <div className="bg-white border-b border-gray-200 py-4">
-          <div className="container mx-auto px-4 flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link to="/english" className="text-gray-800 hover:text-red-500 transition-colors">
-                English
-              </Link>
-              <Link to="/tamil" className="text-gray-800 hover:text-red-500 transition-colors">
-                Tamil
-              </Link>
-                   <Link to="/spanish" className="text-gray-800 hover:text-red-500 transition-colors">
-                Sinhala
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
-
-
 
       {/* Mobile menu */}
       {isMenuOpen && (
