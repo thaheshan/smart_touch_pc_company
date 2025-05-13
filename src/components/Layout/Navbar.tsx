@@ -5,14 +5,18 @@ import { Search, ShoppingCart, Heart, User, Menu, X } from 'lucide-react';
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isEnglish, setIsEnglish] = useState(true);
 
   return (
     <>
       {/* Announcement Bar */}
-      <div className="bg-black text-white text-center py-2 px-4">
-        <p className="text-sm">
+      <div className="bg-black text-white text-center py-2 px-2 ">
+        <p className="text-sm ">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{' '}
-          <span className="font-bold cursor-pointer">ShopNow</span>
+          <span className="font-bold cursor-pointer   px-2">ShopNow</span>
+          <Link  className=' cursor-pointer text-S  absolute -right-0 px-3 hover:text-red-500 transition-colors' to={''}
+           onClick={() => setIsEnglish(!isEnglish)}>ENGLISH</Link>
+
         </p>
       </div>
 
@@ -77,6 +81,27 @@ const Navbar: React.FC = () => {
           </button>
         </div>
       </nav>
+      
+      {/* Language Selection menu */}
+      {isEnglish &&(
+        <div className="bg-white border-b border-gray-200 py-4">
+          <div className="container mx-auto px-4 flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <Link to="/english" className="text-gray-800 hover:text-red-500 transition-colors">
+                English
+              </Link>
+              <Link to="/tamil" className="text-gray-800 hover:text-red-500 transition-colors">
+                Tamil
+              </Link>
+                   <Link to="/spanish" className="text-gray-800 hover:text-red-500 transition-colors">
+                Sinhala
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
+
 
       {/* Mobile menu */}
       {isMenuOpen && (
