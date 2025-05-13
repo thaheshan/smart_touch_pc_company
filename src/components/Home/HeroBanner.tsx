@@ -1,39 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import advertisingbanner from '../../Images/home page advertising banner-2.png';
 
 const HeroBanner: React.FC = () => {
   return (
-    <div className="bg-[#0A0A0A] text-white">
-      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6 md:space-y-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              The Next Generation <br />
-              <span className="text-red-500">Tech Experience</span>
-            </h1>
-            <p className="text-lg text-gray-300 max-w-md">
-              Discover the latest in electronics, gaming accessories, and cutting-edge tech gadgets.
-            </p>
-            <div className="pt-4">
-              <Link 
-                to="/products" 
-                className="inline-flex items-center text-white bg-red-500 hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium"
-              >
-                Shop Now <ArrowRight size={20} className="ml-2" />
-              </Link>
-            </div>
-          </div>
-          <div className="relative">
-            <img
-              src="https://images.pexels.com/photos/1474234/pexels-photo-1474234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-              alt="Latest Gaming Laptop"
-              className="rounded-lg object-cover w-full h-[400px] md:h-[500px]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
-          </div>
-        </div>
-      </div>
+    <div className="relative bg-[#0A0A0A] text-white h-[500px] md:h-[600px] lg:h-[700px]">
+      {/* Background Image */}
+      <img
+        src={advertisingbanner}
+        alt="Latest Gaming Laptop"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+      
+      {/* Overlay Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
+
+    {/* Content */}
+<div className="relative z-20 container mx-auto px-4 py-12 md:py-16 lg:py-20 h-full flex items-center justify-end">
+  <div className="space-y-6 md:space-y-8 max-w-2xl text-right">
+    <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-tight py-4">
+      The Next Generation <br />
+      <span className="text-red-500">Tech Experience</span>
+    </h1>
+    <p className="text-lg text-gray-300 max-w-md ml-auto">
+      Discover the latest in electronics, gaming accessories, and cutting-edge tech gadgets.
+    </p>
+    <div className="pt-4">
+      <Link 
+        to="/products" 
+        className="inline-flex items-center text-white bg-red-500 hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium"
+      >
+        Shop Now <ArrowRight size={20} className="ml-2" />
+      </Link>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };

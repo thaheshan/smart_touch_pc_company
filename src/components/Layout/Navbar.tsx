@@ -13,7 +13,10 @@ const Navbar: React.FC = () => {
       <div className="bg-white text-black text-center py-2 px-2">
         <p className="text-sm">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{' '}
-          <span className="font-bold cursor-pointer px-2">ShopNow</span>
+         
+            <Link to="/products" className=" font-bold cursor-pointer px-2 text-black hover:text-red-500 transition-colors">
+              ShopNow
+            </Link>
 
           {/* Hoverable Language Dropdown */}
           <div className="relative  group ml-4">
