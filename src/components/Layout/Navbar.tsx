@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ShoppingCart, Heart, User, Menu, X } from 'lucide-react';
+import logo from '../../Images/smart touch pc logo.png';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +26,11 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-S font-bold text-black-800 hover:text-red-500">
-            SMART TOUCH PC
+             <img
+              src={logo}
+              alt="SMART TOUCH PC LOGO"
+              className="rounded-lg object-cover w-full h-[60px] md:h-[70px]"
+            />
           </Link>
 
           {/* Desktop Navigation */}
