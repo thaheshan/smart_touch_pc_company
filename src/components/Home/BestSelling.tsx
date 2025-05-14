@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ProductCard from '../UI/ProductCard';
 
 const products = [
@@ -49,14 +48,12 @@ const BestSelling: React.FC = () => {
           <div className="h-10 w-5 bg-red-500 rounded mr-3"></div>
           <h2 className="text-2xl font-bold">Best Selling Products</h2>
         </div>
-        <div className="flex space-x-2">
-          <button className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 hover:border-red-500 hover:text-red-500 transition-colors">
-            <ChevronLeft size={20} />
-          </button>
-          <button className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 hover:border-red-500 hover:text-red-500 transition-colors">
-            <ChevronRight size={20} />
-          </button>
-        </div>
+            <div className="flex justify-center mt-8">
+        <button className="mr-5 px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors">
+          View All Products
+        </button>
+      </div>
+   
       </div>
       
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
@@ -74,11 +71,7 @@ const BestSelling: React.FC = () => {
         ))}
       </div>
       
-      <div className="flex justify-center mt-8">
-        <button className="px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors">
-          View All Products
-        </button>
-      </div>
+  
     </div>
   );
 };

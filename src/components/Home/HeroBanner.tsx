@@ -26,16 +26,16 @@ const HeroBanner: React.FC = () => {
     <p className="text-lg text-gray-300 max-w-md ml-auto">
       Discover the latest in electronics, gaming accessories, and cutting-edge tech gadgets.
     </p>
-    <div className="pt-4">
-      <Link 
-        to="/products" 
-        className="inline-flex items-center text-white bg-red-500 hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium"
-      >
-        Shop Now <ArrowRight size={20} className="ml-2" />
-      </Link>
-    </div>
+ 
   </div>
+{/* Shop Now Button at Bottom Center */}
+ <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2"> 
+ <Link to="/products" className="inline-flex items-center text-white bg-red-500 hover:bg-red-600 transition-colors px-6 py-3 rounded-md font-medium" >
+  Shop Now <ArrowRight size={20} className="ml-2" /> </Link> </div>
+
 </div>
+
+
 
     </div>
   );

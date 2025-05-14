@@ -10,8 +10,9 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <HeroBanner />
-      <FeaturedCategories />
+     
       <FlashSale />
+       <FeaturedCategories />
       <BestSelling />
       <FeaturedBanner />
       <NewArrivals />
