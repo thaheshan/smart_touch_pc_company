@@ -27,10 +27,11 @@ const Footer: React.FC = () => {
           {/* Column 2 */}
           <div className="space-y-4">
             <h2 className="text-xl font-bold mb-4">Support</h2>
-            <p className="mb-2">111 Bijoy sarani, Dhaka,</p>
-            <p className="mb-2">DH 1515, Bangladesh.</p>
-            <p className="mb-2">exclusive@gmail.com</p>
-            <p className="mb-2">+88015-88888-9999</p>
+            <p className="mb-2">no 14, Post office RD</p>
+            <p className="mb-2">
+                    Trincomalee, Sri Lanka.</p>
+            <p className="mb-2">SMARTTOUCHPC@gmail.com</p>
+            <p className="mb-2">+94 75-257-0435</p>
           </div>
 
           {/* Column 3 */}
@@ -116,7 +117,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="text-center mt-16">
-          <p className="text-gray-400">© Copyright Rimel 2022. All right reserved</p>
+          <p className="text-gray-400">© Copyright FUTURA Solutions 2025. All right reserved</p>
         </div>
       </div>
     </footer>

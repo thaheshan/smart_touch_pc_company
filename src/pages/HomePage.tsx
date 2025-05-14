@@ -5,6 +5,7 @@ import FlashSale from '../components/Home/FlashSale';
 import BestSelling from '../components/Home/BestSelling';
 import NewArrivals from '../components/Home/NewArrivals';
 import FeaturedBanner from '../components/Home/FeaturedBanner';
+import OurProducts from '../components/Home/OurProducts';
 
 const HomePage: React.FC = () => {
   return (
@@ -15,6 +16,8 @@ const HomePage: React.FC = () => {
        <FeaturedCategories />
       <BestSelling />
       <FeaturedBanner />
+      <OurProducts />
+
       <NewArrivals />
     </div>
   );

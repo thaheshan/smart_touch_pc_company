@@ -47,7 +47,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-medium mb-1">Call Us</h3>
-                  <p className="text-gray-600">+88015-88888-9999</p>
+                  <p className="text-gray-600">+94-75-257-0435</p>
                 </div>
               </div>
 
@@ -57,7 +57,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-medium mb-1">Email Us</h3>
-                  <p className="text-gray-600">exclusive@gmail.com</p>
+                  <p className="text-gray-600">SMARTTOUCHPC@gmail.com</p>
                 </div>
               </div>
 
@@ -68,8 +68,8 @@ const ContactPage: React.FC = () => {
                 <div>
                   <h3 className="font-medium mb-1">Location</h3>
                   <p className="text-gray-600">
-                    111 Bijoy sarani, Dhaka,<br />
-                    DH 1515, Bangladesh.
+                   no 14, Post office RD<br />
+                    Trincomalee, Sri Lanka.
                   </p>
                 </div>
               </div>
