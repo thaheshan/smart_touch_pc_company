@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
 
       {/* Main Navbar */}
       <nav className="border-b border-gray-200 py-4 bg-black">
-        <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="container mx-auto px-1 flex items-center space-around justify-between">
           {/* Logo */}
           <Link to="/" className="text-S font-bold text-black-800 hover:text-red-500">
             <img
@@ -88,7 +88,8 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Action icons */}
-          <div className="hidden md:flex items-center space-x-4">
+         <div className="hidden relative  right-12 md:flex items-center space-x-4">
+
             <Link to="/wishlist" className="text-white hover:text-red-500 transition-colors">
               <Heart size={24} />
             </Link>
