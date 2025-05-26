@@ -118,8 +118,8 @@ const TermsPage: React.FC = () => {
               If you have any questions about these Terms of Use, please contact us at:
             </p>
             <div className="text-gray-600">
-              <p>Email: terms@exclusive.com</p>
-              <p>Phone: +1-888-123-4567</p>
+              <p>Email: smarttouchpc@gmail.com</p>
+              <p>Phone: +94-75-664-5486</p>
               <p>Address: 111 Bijoy sarani, Dhaka, DH 1515, Bangladesh</p>
             </div>
           </section>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { ChevronRight, MinusIcon, PlusIcon, Heart, ShoppingCart, ShieldCheck, Truck } from 'lucide-react';
+import { Link, useParams } from 'react-router-dom';
+import { ChevronRight, MinusIcon, PlusIcon, Heart, ShieldCheck, Truck } from 'lucide-react';
 import Button from '../components/UI/Button';
 
 // Mock product data
@@ -77,9 +77,9 @@ const ProductDetailPage: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Breadcrumbs */}
       <div className="flex items-center text-sm text-gray-500 mb-6">
-        <span className="hover:text-red-500 transition-colors cursor-pointer">Account</span>
+            <Link to="/products" className="hover:text-red-500 transition-colors cursor-pointer">Category</Link>
         <ChevronRight size={16} className="mx-2" />
-        <span className="hover:text-red-500 transition-colors cursor-pointer">Gaming</span>
+         <Link to="/category/:4" className="hover:text-red-500 transition-colors cursor-pointer">Gaming</Link>
         <ChevronRight size={16} className="mx-2" />
         <span className="text-gray-800 font-medium">{product.name}</span>
       </div>
