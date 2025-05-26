@@ -12,7 +12,7 @@ const ErrorPage: React.FC = () => {
           or is temporarily unavailable.
         </p>
         <Link 
-          to="/"
+          to="/home"
           className="inline-block bg-red-500 text-white px-8 py-3 rounded-md hover:bg-red-600 transition-colors"
         >
           Back to Homepage
