@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ProductCard from '../UI/ProductCard';
+import { Link } from 'react-router-dom';
 
 const products = [
   {
@@ -46,6 +47,40 @@ const products = [
 ];
 
 const FlashSale: React.FC = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const endTime = new Date();
+    endTime.setDate(endTime.getDate() + 2); // 2 days from now
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const distance = endTime.getTime() - now;
+
+      if (distance < 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call
+
+    return () => clearInterval(timerInterval);
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="flex justify-between items-center mb-8">
@@ -62,46 +97,47 @@ const FlashSale: React.FC = () => {
           </button>
         </div>
       </div>
-      
-      {/* Timer */}
+
+      {/* Countdown Timer */}
       <div className="flex items-center space-x-6 mb-8">
         <div className="flex items-end">
           <div className="text-sm text-gray-500 mr-2">Days</div>
-          <div className="text-xl md:text-2xl font-bold">03</div>
+          <div className="text-xl md:text-2xl font-bold">{String(timeLeft.days).padStart(2, '0')}</div>
         </div>
         <div className="text-xl md:text-2xl font-bold">:</div>
         <div className="flex items-end">
           <div className="text-sm text-gray-500 mr-2">Hours</div>
-          <div className="text-xl md:text-2xl font-bold">23</div>
+          <div className="text-xl md:text-2xl font-bold">{String(timeLeft.hours).padStart(2, '0')}</div>
         </div>
         <div className="text-xl md:text-2xl font-bold">:</div>
         <div className="flex items-end">
           <div className="text-sm text-gray-500 mr-2">Minutes</div>
-          <div className="text-xl md:text-2xl font-bold">19</div>
+          <div className="text-xl md:text-2xl font-bold">{String(timeLeft.minutes).padStart(2, '0')}</div>
         </div>
         <div className="text-xl md:text-2xl font-bold">:</div>
         <div className="flex items-end">
           <div className="text-sm text-gray-500 mr-2">Seconds</div>
-          <div className="text-xl md:text-2xl font-bold">56</div>
+          <div className="text-xl md:text-2xl font-bold">{String(timeLeft.seconds).padStart(2, '0')}</div>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            originalPrice={product.originalPrice}
-            image={product.image}
-            rating={product.rating}
-            reviewCount={product.reviewCount}
-            discountPercentage={product.discountPercentage}
-          />
+          <Link to={`/product/${product.id}`} key={product.id}>
+            <ProductCard
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              originalPrice={product.originalPrice}
+              image={product.image}
+              rating={product.rating}
+              reviewCount={product.reviewCount}
+              discountPercentage={product.discountPercentage}
+            />
+          </Link>
         ))}
       </div>
-      
+
       <div className="flex justify-center mt-8">
         <button className="px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors">
           View All Products
