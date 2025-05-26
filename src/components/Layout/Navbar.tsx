@@ -98,7 +98,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation with underline animation */}
           <div className="hidden md:flex items-center space-x-8">
-            {['Home', 'Contact', 'About', 'Sign Up'].map((item) => (
+            {['home', 'Contact', 'About', 'SignUp'].map((item) => (
               <Link 
                 key={item} 
                 to={`/${item.toLowerCase().replace(' ', '-')}`} 
